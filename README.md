@@ -1,3 +1,11 @@
+### Before run
+Ensure you use latest version of node.js. Ideally you should have `22`
+
+### Notes
+I didn't use child modules in the API for simplicity and clarity.
+I used inline CSS to avoid adding extra dependencies and to finish the task more quickly.
+
+
 ### Run project locally
 
 1. Go to api cd ./api and run npm install
@@ -23,3 +31,4 @@ Also, you can check existing DTOs, tes Auth, etc. and `node_modules and install 
 
 If you have issues with running api or todo-app try to remove package-lock.json and node_modules and install everything from scratch.
 For any questions you can also reach me via email honcharukna@gmail.com
+

@@ -42,6 +42,10 @@ export class TodoDto {
   @IsString()
   @ApiProperty()
   description: string;
+
+  @IsEnum(TodoStatus)
+  @ApiProperty()
+  status: TodoStatus;
 }
 
 export class GetTodosQueryDto {
