@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Layout, List, Typography } from 'antd';
-import AppLayout from '../components/Layout';
-import TodoFormModal from '../components/TodoFormModal';
-import FilterSection from '../components/FilterSection';
-import { useTodos } from '../hooks/todos';
-import TodoItem from '../components/TodoItem';
-import { deleteTodo, markTodoAsDone } from '../api/todos';
-import { Todo, TodoStatus } from '../models/todo';
+import { useEffect, useState } from "react";
+import { Layout, List, Typography } from "antd";
+import AppLayout from "../components/Layout";
+import TodoFormModal from "../components/TodoFormModal";
+import FilterSection from "../components/FilterSection";
+import { useTodos } from "../hooks/todos";
+import TodoItem from "../components/TodoItem";
+import { deleteTodo, markTodoAsDone } from "../api/todos";
+import { Todo, TodoStatus } from "../models/todo";
 
 const { Content } = Layout;
 
@@ -15,7 +15,7 @@ const DashboardPage = () => {
   const { data, search, updateTodo, removeTodo, addTodo } = useTodos();
   const [editingTodo, setEditingTodo] = useState<Todo | undefined>();
 
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<TodoStatus | undefined>();
 
   const handleSearch = (q: string) => {
@@ -28,7 +28,7 @@ const DashboardPage = () => {
 
   return (
     <AppLayout>
-      <Content style={{ padding: 24, maxWidth: 1000, margin: '0 auto' }}>
+      <Content style={{ padding: 24, maxWidth: 1000, margin: "0 auto" }}>
         <Typography.Title level={2}>📝 To-Do List</Typography.Title>
 
         <FilterSection
@@ -42,8 +42,8 @@ const DashboardPage = () => {
         <List
           bordered
           dataSource={data}
-          locale={{ emptyText: 'No tasks found.' }}
-          style={{ border: 'none' }}
+          locale={{ emptyText: "No tasks found." }}
+          style={{ border: "none" }}
           renderItem={(item) => (
             <TodoItem
               todo={item}

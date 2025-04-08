@@ -26,6 +26,7 @@ const TodoFormModal = ({ open, onCancel, onSuccess, todo }: Props) => {
       form.setFieldsValue({
         title: todo.title,
         description: todo.description,
+        status: todo.status,
       });
     } else {
       form.resetFields();
