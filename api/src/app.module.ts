@@ -29,7 +29,7 @@ import { AuthGuard } from './services/auth.guard';
     JwtModule.register({
       global: true,
       secret: process.env.AUTH_JWT_SECRET,
-      signOptions: { expiresIn: '360 days' }, // just for test task, in real project it should be around 15 - 60 mins with refresh mechanism,
+      signOptions: { expiresIn: '360 days' }, // just for test task, in real project it should be around 15 - 60 mins with refresh mechanism
     }),
     TypeOrmModule.forFeature([User, Todo]),
   ],

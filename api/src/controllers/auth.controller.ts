@@ -25,7 +25,7 @@ export class AuthController {
     const result = await this.authService.signIn(body.email, body.password);
 
     if (!result) {
-      throw new UnauthorizedException();
+      throw new UnauthorizedException('Invalid email or password');
     }
 
     return { data: result };

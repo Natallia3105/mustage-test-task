@@ -9,7 +9,7 @@ export class User extends BaseEntity {
   @ApiProperty()
   name: string;
 
-  @Column()
+  @Column({ unique: true })
   @ApiProperty()
   email: string;
 
