@@ -1,0 +1,29 @@
+services:
+  api:
+    build:
+      context: ./api
+    container_name: nest-app
+    ports:
+      - "3200:3000"
+    volumes:
+      - ./api:/app
+      - /api/app/node_modules
+    depends_on:
+      - db
+    networks:
+      - api-network
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: todo-app
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5438:5432" # It's opened for test purposes. In real project it will be in private subnet and nobody have access to DB
+    networks:
+      - api-network
+
+networks:
+  api-network:
